@@ -10,6 +10,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.thefinestartist.finestwebview.FinestWebView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,7 +19,7 @@ import org.json.JSONObject;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
 
@@ -30,18 +31,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        mMap.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
-            @Override
-            public void onCameraIdle() {
-                loadNearbyWikidata();
-            }
-        });
-        loadNearbyWikidata();
     }
 
     private void loadNearbyWikidata() {
         try {
-            String wikipediaAPISearchPlaces = "https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gscoord=" + mMap.getCameraPosition().target.latitude + "-" + mMap.getCameraPosition().target.longitude + "&gsradius=10000&gslimit=50&format=json";
+            String wikipediaAPISearchPlaces = "https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gscoord=" + mMap.getCameraPosition().target.latitude + "|" + mMap.getCameraPosition().target.longitude + "&gsradius=10000&gslimit=200&format=json";
             new APIProvider(new OnTaskCompleted() {
                 @Override
                 public void onTaskCompleted(JSONObject result) {
@@ -53,10 +47,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             double lon = currentPlace.getDouble("lon");
                             double lat = currentPlace.getDouble("lat");
                             String title = currentPlace.getString("title");
+                            int pageid = currentPlace.getInt("pageid");
 
                             Marker marker = mMap.addMarker(new MarkerOptions()
                                     .position(new LatLng(lat, lon))
                                     .title(title));
+                            marker.setTag(pageid);
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -68,6 +64,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        int tag = (int)marker.getTag();
+        if (tag > 0) {
+            new FinestWebView.Builder(MapsActivity.this).show("http://en.wikipedia.org/?curid=" + tag);
+        }
+        return true;
+    }
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -77,13 +82,40 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+    private LatLng oldPos = null;
+    private float oldZoom = 0;
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng dornbirn = new LatLng(47.413070, 9.744314);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(dornbirn));
+
+        mMap.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
+            @Override
+            public void onCameraIdle() {
+                if (oldPos == null) {
+                    return;
+                }
+                double latOff = Math.abs(oldPos.latitude - mMap.getCameraPosition().target.latitude);
+                double lonOff = Math.abs(oldPos.longitude - mMap.getCameraPosition().target.longitude);
+                System.out.print(latOff);
+                System.out.print(lonOff);
+                float newZoom = mMap.getCameraPosition().zoom;
+                if (latOff > 0.05 || lonOff > 0 || oldZoom != newZoom) {
+                    loadNearbyWikidata();
+                }
+            }
+        });
+        mMap.setOnCameraMoveStartedListener(new GoogleMap.OnCameraMoveStartedListener() {
+            @Override
+            public void onCameraMoveStarted(int i) {
+                oldPos = mMap.getCameraPosition().target;
+                oldZoom = mMap.getCameraPosition().zoom;
+            }
+        });
+        loadNearbyWikidata();
     }
 }
