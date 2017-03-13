@@ -3,6 +3,7 @@ package at.fhv.teamx.wikigeoinfo;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -91,8 +92,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         LatLng dornbirn = new LatLng(47.413070, 9.744314);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(dornbirn));
-
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(dornbirn, (float)14.0));
+        mMap.setOnMarkerClickListener(this);
         mMap.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
             @Override
             public void onCameraIdle() {
