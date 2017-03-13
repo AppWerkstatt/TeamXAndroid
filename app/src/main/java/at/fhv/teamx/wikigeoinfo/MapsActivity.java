@@ -69,7 +69,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public boolean onMarkerClick(Marker marker) {
         int tag = (int)marker.getTag();
         if (tag > 0) {
-            new FinestWebView.Builder(MapsActivity.this).show("http://en.wikipedia.org/?curid=" + tag);
+            new FinestWebView.Builder(MapsActivity.this).show("https://en.m.wikipedia.org/w/index.php?title=Translation&curid=" + tag);
         }
         return true;
     }
@@ -92,7 +92,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         LatLng dornbirn = new LatLng(47.413070, 9.744314);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(dornbirn, (float)14.0));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(dornbirn, (float)10.0));
         mMap.setOnMarkerClickListener(this);
         mMap.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
             @Override
