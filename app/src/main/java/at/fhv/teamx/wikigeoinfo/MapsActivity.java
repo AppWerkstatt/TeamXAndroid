@@ -24,6 +24,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
     }
 
+    private void loadNearbyWikidata() {
+
+    }
 
     /**
      * Manipulates the map once available.
