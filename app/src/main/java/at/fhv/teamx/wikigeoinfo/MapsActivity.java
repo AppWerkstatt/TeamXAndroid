@@ -10,6 +10,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONObject;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -24,8 +29,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
     }
 
-    private void loadNearbyWikidata() {
 
+
+    private void loadNearbyWikidata() {
+        try {
+            new APIProvider(new OnTaskCompleted() {
+                @Override
+                public void onTaskCompleted(JSONObject result) {
+                    System.out.print(result.toString());
+                }
+            }).execute(new URL("https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gscoord=37.786952%7C-122.399523&gsradius=10000&gslimit=10&format=json"));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
