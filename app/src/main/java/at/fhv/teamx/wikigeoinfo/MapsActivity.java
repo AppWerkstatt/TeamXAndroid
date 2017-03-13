@@ -8,8 +8,11 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.MalformedURLException;
@@ -27,18 +30,39 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        mMap.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
+            @Override
+            public void onCameraIdle() {
+                loadNearbyWikidata();
+            }
+        });
+        loadNearbyWikidata();
     }
-
-
 
     private void loadNearbyWikidata() {
         try {
+            String wikipediaAPISearchPlaces = "https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gscoord=" + mMap.getCameraPosition().target.latitude + "-" + mMap.getCameraPosition().target.longitude + "&gsradius=10000&gslimit=50&format=json";
             new APIProvider(new OnTaskCompleted() {
                 @Override
                 public void onTaskCompleted(JSONObject result) {
-                    System.out.print(result.toString());
+                    mMap.clear();
+                    try {
+                        JSONArray places = result.getJSONObject("query").getJSONArray("geosearch");
+                        for (int i = 0; i < places.length(); i++) {
+                            JSONObject currentPlace = places.getJSONObject(i);
+                            double lon = currentPlace.getDouble("lon");
+                            double lat = currentPlace.getDouble("lat");
+                            String title = currentPlace.getString("title");
+
+                            Marker marker = mMap.addMarker(new MarkerOptions()
+                                    .position(new LatLng(lat, lon))
+                                    .title(title));
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }).execute(new URL("https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gscoord=37.786952%7C-122.399523&gsradius=10000&gslimit=10&format=json"));
+            }).execute(new URL(wikipediaAPISearchPlaces));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
