@@ -290,6 +290,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             Intent intent = intentBuilder.build();
             startActivityForResult(intent, REQUEST_INVITE);
         }
+        if (item.getItemId() == R.id.flyto) {
+            Intent intent = new Intent(this, FlyToActivity.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 }
