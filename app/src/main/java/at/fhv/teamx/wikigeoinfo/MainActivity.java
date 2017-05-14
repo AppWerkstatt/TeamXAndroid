@@ -319,6 +319,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
         }
+        if (item.getItemId() == R.id.favorite) {
+            Intent intent = new Intent(this, SavedPOIActivity.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 

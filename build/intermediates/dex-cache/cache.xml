@@ -286,7 +286,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="d839f76a10677558e001426c64fc0035847fb8ae">
+        sha1="e7dba26cb99d289d409f0ca5134612164bbb5ffe">
         <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a191cf43dd1b472dbe9f885fc16b0aa3f618ffd0/classes.dex" />
     </item>
     <item
@@ -351,6 +351,15 @@
         revision="25.0.2"
         sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
         <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_695066b6df82ffa99eeb3d11f5af3605fe9350c2.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lukasboehler/.android/build-cache/84b4c55bf69a9d8554fb554edd1d1b7d64864fce/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6666dd525c3da197e7d07f4f23ef5fc7881a697b">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5e11278943aad36c0e487e49b42b088d93417ce1/classes.dex" />
     </item>
     <item
         is-multidex="false"
