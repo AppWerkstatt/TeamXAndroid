@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onLocationChanged(Location location) {
         if (followUserLocation) {
             LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, (float)20.0));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, (float)16.0));
             followUserLocation = false;
         }
     }
@@ -306,7 +306,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             // Flyto location.
             FlyTo flyto = (FlyTo)data.getSerializableExtra("flyto");
             LatLng userLocation = new LatLng(flyto.getLat(), flyto.getLng());
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, (float)20.0));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, (float)16.0));
         }
     }
 }

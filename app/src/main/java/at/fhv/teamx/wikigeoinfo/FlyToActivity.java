@@ -9,6 +9,10 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.NetworkImageView;
+import com.android.volley.toolbox.Volley;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -29,7 +33,9 @@ public class FlyToActivity extends AppCompatActivity {
             @Override
             protected void populateView(View view, final FlyTo flytolocation, int position) {
                 ((TextView)view.findViewById(R.id.label)).setText(flytolocation.getName());
-                ((ImageView)view.findViewById(R.id.icon)).setImageURI(Uri.parse(flytolocation.getUrl()));
+                ImageLoader.ImageCache imageCache = new BitmapLruCache();
+                ImageLoader imageLoader = new ImageLoader(Volley.newRequestQueue(FlyToActivity.this), imageCache);
+                ((NetworkImageView)view.findViewById(R.id.icon)).setImageUrl(flytolocation.getUrl(), imageLoader);
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
