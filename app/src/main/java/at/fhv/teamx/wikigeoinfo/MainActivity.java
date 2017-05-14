@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private LocationManager mLocationManager;
     private static final int PERMISSION_ACCESS_COURSE_LOCATION = 527;
     private static final int REQUEST_INVITE = 427;
+    private static final int AWESOME_CALLBACK = 327;
     private boolean followUserLocation = true;
     private GoogleApiClient mGoogleApiClient;
     private ArrayList<POI> mPois;
@@ -159,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onLocationChanged(Location location) {
         if (followUserLocation) {
             LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, (float)10.0));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, (float)20.0));
             followUserLocation = false;
         }
     }
@@ -292,8 +293,20 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         if (item.getItemId() == R.id.flyto) {
             Intent intent = new Intent(this, FlyToActivity.class);
-            startActivity(intent);
+            startActivityForResult(intent, AWESOME_CALLBACK);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == AWESOME_CALLBACK) {
+            // Flyto location.
+            FlyTo flyto = (FlyTo)data.getSerializableExtra("flyto");
+            LatLng userLocation = new LatLng(flyto.getLat(), flyto.getLng());
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, (float)20.0));
+        }
     }
 }

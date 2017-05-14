@@ -3,11 +3,29 @@
 
     <item
         is-multidex="true"
+        jar="/Users/lukasboehler/.android/build-cache/642db1315edb116117bcbfb7b9f6a330af57b669/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1c5b773cf5e562f4c4a8d7ba28c9280cbb3770a0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lukasboehler/.android/build-cache/a3cb31e00c5347cea03fef5360afe8b6f01bfd62/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f5bcd9cbfeedc58f493339841a7c5d0347a39f0b">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e7f65d03de1c40c00a75d21ee67aa5b31248f0e3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="6513b4b26bd7a093a022f8f485d6b1907835202e">
+        sha1="fec2feb86eb8fb1faf11b6c83a6703add9327aa0">
         <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a191cf43dd1b472dbe9f885fc16b0aa3f618ffd0/classes.dex" />
     </item>
     <item

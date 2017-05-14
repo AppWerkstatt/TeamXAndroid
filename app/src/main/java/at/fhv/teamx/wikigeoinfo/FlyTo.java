@@ -1,10 +1,12 @@
 package at.fhv.teamx.wikigeoinfo;
 
+import java.io.Serializable;
+
 /**
  * Created by lukasboehler on 14.05.17.
  */
 
-public class FlyTo {
+public class FlyTo implements Serializable {
     private double lng = 0.0;
     private double lat = 0.0;
     private String name = "";

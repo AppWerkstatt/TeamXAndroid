@@ -1,5 +1,6 @@
 package at.fhv.teamx.wikigeoinfo;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,9 +27,18 @@ public class FlyToActivity extends AppCompatActivity {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("flytopois");
         mAdapter = new FirebaseListAdapter<FlyTo>(this, FlyTo.class, R.layout.flyto_item, ref) {
             @Override
-            protected void populateView(View view, FlyTo flytolocation, int position) {
+            protected void populateView(View view, final FlyTo flytolocation, int position) {
                 ((TextView)view.findViewById(R.id.label)).setText(flytolocation.getName());
                 ((ImageView)view.findViewById(R.id.icon)).setImageURI(Uri.parse(flytolocation.getUrl()));
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent output = new Intent();
+                        output.putExtra("flyto", flytolocation);
+                        setResult(RESULT_OK, output);
+                        finish();
+                    }
+                });
             }
         };
         flytoListview.setAdapter(mAdapter);
