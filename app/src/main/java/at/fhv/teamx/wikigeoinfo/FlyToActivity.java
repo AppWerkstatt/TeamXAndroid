@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import com.firebase.ui.database.FirebaseListAdapter;
+
 import java.util.List;
 
 public class FlyToActivity extends AppCompatActivity {
