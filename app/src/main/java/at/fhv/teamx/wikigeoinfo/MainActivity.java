@@ -295,6 +295,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             Intent intent = new Intent(this, FlyToActivity.class);
             startActivityForResult(intent, AWESOME_CALLBACK);
         }
+        if (item.getItemId() == R.id.settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -304,9 +308,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         if (requestCode == AWESOME_CALLBACK) {
             // Flyto location.
-            FlyTo flyto = (FlyTo)data.getSerializableExtra("flyto");
-            LatLng userLocation = new LatLng(flyto.getLat(), flyto.getLng());
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, (float)16.0));
+            if (data.getSerializableExtra("flyto") != null) {
+                FlyTo flyto = (FlyTo)data.getSerializableExtra("flyto");
+                LatLng userLocation = new LatLng(flyto.getLat(), flyto.getLng());
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, (float)16.0));
+            }
         }
     }
 }

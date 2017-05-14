@@ -2,31 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/lukasboehler/.android/build-cache/642db1315edb116117bcbfb7b9f6a330af57b669/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/73e3d9e5e4e62a1a617af2d0aca695f5f086da1c/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
-        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1c5b773cf5e562f4c4a8d7ba28c9280cbb3770a0/classes.dex" />
+        sha1="101393e975eaf36e3ff40b277ee9a019e077afef">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_6705a87a588c99fa1381f993927efeeddfa06f7e.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/lukasboehler/.android/build-cache/5f7de76f02fd6f41a69dfb86ce3f3677c4b20b1c/output/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/310d712dc68a4acf737b0a4214662a0d640231e8/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
-        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c17405ebec9bf9119d8e91e031ee14190145fe4b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cbbc5c072836a821de41109a33c3dc8018729357">
-        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a191cf43dd1b472dbe9f885fc16b0aa3f618ffd0/classes.dex" />
+        sha1="3aaf1e7b5fe9f4d3ff22c4edc0ead631f7389d30">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_dd04f601d94a0680c37c950ff557b189788b5736.jar" />
     </item>
     <item
         is-multidex="true"
@@ -38,6 +29,303 @@
         <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e7f65d03de1c40c00a75d21ee67aa5b31248f0e3/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/642db1315edb116117bcbfb7b9f6a330af57b669/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_1c5b773cf5e562f4c4a8d7ba28c9280cbb3770a0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/51e2b077cf65f6ac0aac5962f4a0f813c186943d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="94fca868854457ede6df15c902938468c71d579e">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_140b3701781c1a68aa20978ff1ad46e0ab0befdc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/511886db23624d88800303ac90da6f04442b256c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="90270132a5f1a33584f453c571257dd35e728201">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_a7a62855e250dfe43d0bec505b6bfaec9cf97b9b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/678c6aa2a73fb24e92771995207a8ee2c2f0c3b3/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0f58195bee8a08f35e7d4ee7fd4b0479e570e172">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_1fe4917b3cd41bbc6482d3b205ec1a2e68e4d1db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/5f7de76f02fd6f41a69dfb86ce3f3677c4b20b1c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_c17405ebec9bf9119d8e91e031ee14190145fe4b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/3a9be9b03e0bc9bbced46650f123fac2f2ee4a3a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_42edffef7673b95adbabf3f207071caa29f91889.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/a784082f2456ab93d0e24012a1fecbab157735ce/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7d14fe9bd2283b2eb7fcab08458aa0357917e138">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_8104f55690b5c387ebe1d5b7ce28a1b3edd0f8b2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/079955aa91f6779860142db42049eff3d2689e68/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a3f7595ca32e614b454ceb7b7e241bb037a28e86">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_6c89c3b2cd18e3d1ed9a708eb99ceb903414bcfa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/3e6210e51368305e72ad7724f856989dfd67d516/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4e01b82d664e1a8253b2b9658e74b5da35c8771d">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_6a7981ba048de57468b29871f5329a53749eb3db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/c78c3308a000cf8fc074f7ad77edca1c217abcc8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="48532a016bb0dfbe7970c147ce784598a515406b">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_a4fabb9b5fc600286bdec157d85e164e293de0b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/3a1aea8217d4bd1add1a28d99ae85b8357717127/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="68485f21eeb5d6c9ed82c445d520b9fc81c87108">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_631d8002e32cdcdb6683d8771b47c7ce65995e7c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/0434000282b4a461b3e62b9b78e1e1457fea8ae6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="db4aca1c1ec60f2c098d3b6c91cedfb7838f83ed">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_77e1db39e70ee76abd3cb080cb5adaf0fbffa60d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/5367f9344a6f2b9823948189a496499130008d81/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_64be75e0989ae4d62816845b62363daa0ae17b16.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/0753a84661df8eaba7f89849838888c3e7e50360/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_967b6f0cb295cfe0ca286473d42c915306303ac0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/b2c2fda726ee23f87e939e6431ed9503ebdc818b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1bab75be1918fc9871be4da7afe38d7e4d308303">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_19466dd754bafd665b657148ba33b4bf715cc7d3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/598801d5e4b658e53469e628f2fbb10cc8f4cb71/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ce9112e08a027c8620ae693983e38cdbb9f6371b">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_dfd2299da1d86bb13b431d83e253efb56fbeb7c2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/7a3f000975d7188bf91ab722acf1c956b9dcac33/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_721e13c3c3483100479ec63e419012432e2f3e75.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/bc5d3d85da93ac6c397b37a154209a44d2946204/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="646b2c48e147b943f0a39842457fdc66d501e4b6">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_2c5614d258ddbe6be9de84b09d7fb80b1818854c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/cf07bad60c14079c874fac2979ddadca1fdcf625/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e7157a9577c983651d6c6ee313813424fe2d8ab6">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_5aacf4f41374b265bd5571bed7279c468860552c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/1988270abc1e15267259a7b7ba9c8bac5f710dd9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45e0953544711e0b5a2d227732e88cccb82793bc">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_0496f9b9a90be669cc4f3f40a1dcc7610e65b300.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/7a3f000975d7188bf91ab722acf1c956b9dcac33/output/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/internal_impl-24.0.0_0ca648bec8c5433a73836bfb208299f0bed49573.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/538816e426a1f1dfae620940c17704d09d436751/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_98994d02470fffaf5ed983a047964f3071f46f18.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/c34b893d45670b26bf1023da4f8100d2fe4e516a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="423fb69e69759d8b726fa4a4fb6a1ea9fc86d1cd">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_960877c6571b5d215ed1611622633fcc1757bea1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/058d23aa7c2c0424734fe3da778469eff3e20e1c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_8f7d389330927f887bc8545d685fb10a61a77b08.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/acfae488e3b0f076437aeedf4309db477a2a8929/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1fbf3733f36fea63e70373212796e70f9079981f">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_988497263ed587600d814a461c5ebbe28a9b8b82.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/598cee0407338f7c2a946cb902a11df6ffb8e8a1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="421a5cebe9ff187c98075c59786e9464c5c67d36">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_15e7735cd95c50db1747b675177ab59c6314b399.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/734cfc9c91ff8b4055caca6c05fd29acd5bbe135/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4ef2d91da513c4d7e773ae438fe04d0e4c135957">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_1dc34b3b5c74eb458d7d78de7e74a30c7388cfa7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/9f9b52cfe5b6ce5802525a7c48a5f50a6c39b884/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b831d3902674d096189451d46fce219e2c2904b7">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_40a366d0209c512e87a2bb7b950fd4668f8f0a6a.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d839f76a10677558e001426c64fc0035847fb8ae">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a191cf43dd1b472dbe9f885fc16b0aa3f618ffd0/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/44c6d62f5246f4705954d9d8c207307594337fc1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ddb7fed808f4331174b59428ccfc46b3696c9812">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_571f662e583e63685b65ea082d95ccc0069695a5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/1af55baeeaca2aee518142fecfdb054f0a971c22/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9d1d0e1270310e34e2d65afda2bc18605c14cd46">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_4b7861efcf0a15668d1b198ed80a567c9c6ef00e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/5e640ee327213aad9f02534f52dc0bc477cb2e04/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ea03bbfaed89818f233ee9918fac493f2b63895a">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_a545e76e0f9563bb98421e48988f2a6a5baadcdc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/b5fe332236ca908139fce6e9d0bcdfb658c554bd/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_9dac2d8a167432ab96a6e0b8d88728c815088b57.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
@@ -45,6 +333,294 @@
         revision="25.0.2"
         sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
         <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_433d883ef8e19215470ef9e5a3f06aaa76f8a628/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/a3cb31e00c5347cea03fef5360afe8b6f01bfd62/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f5bcd9cbfeedc58f493339841a7c5d0347a39f0b">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_e7f65d03de1c40c00a75d21ee67aa5b31248f0e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/463c85e4de5c80d5869e4bfda9fbc94596e394c7/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_695066b6df82ffa99eeb3d11f5af3605fe9350c2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/6875991f3d5ce662d797db54f410a1c958fb69c2/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8438c64f9eb581429dc592f7c9b3156a3d071653">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_6e4e2b3e284b649746724e6050e398cf5863f5ae.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lukasboehler/.android/build-cache/642db1315edb116117bcbfb7b9f6a330af57b669/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c9649557905bf7a80fca9e0d54cbcb7662627860">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1c5b773cf5e562f4c4a8d7ba28c9280cbb3770a0/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/db4d968bb371650edb3df981ca3739ead80427f1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="654b294d429b56fd18392f2b68ad79954f431f8e">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_e397816467e353b7a6f72c0a7efffe067586c15f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/6790e63e1b86875562ba2fd578ddccff289cb5c8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8e1d31656bc9f1889283836e025e6cb703acd38a">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_80f1f8b51877c89658a4d419734c78b38ce1743a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/dfbf2f18c3572ed49c77e4ec20550330f05b22ac/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="db48dfabe8ecc46681ceca418d6bd61a5339f818">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_710605ad86286352a4d11959e2e049cc3645c5d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/a598f405563a04892fb08664d18ac73947f6bf7a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3f4483afd050f3be12db7838422309446a45daa1">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_24824517095e0befd8a22609e62d572d4b698adb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/8fb5e9c288ec9b8a218f5c7eef5d7003db64f029/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0e301f24b283f14b564f660c9abe863af6be5896">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_0cd36e8b5c03afcac01606f2d68efa907a44d910.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/b9590614c2a831fe4e81166dc52f5d27cba607b6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="857ce7350acf811749c8fd0254d3d39b02aa71f5">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_af2c2373bccae9b125d6244697a870bd63387417.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/21391874a3f075c5dd0ff0a794ddeb77014ec590/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_4a18a3e1fdbddd65d9defda81e4e06cd5090f2dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/0256c887a26e94132943d305048e80c240ca4f66/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d08bb32b88df3dbcbe1d498c3c57f020b8c521ec">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_f9b9ca540aca235d4beba4c914ffde014a5e5704.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lukasboehler/.android/build-cache/5f7de76f02fd6f41a69dfb86ce3f3677c4b20b1c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c17405ebec9bf9119d8e91e031ee14190145fe4b/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/3837ee31976f73ad1a563b4bcef9ed59e1112ef2/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="74c5a91d6510ad42410e8a047d90d2ea6721a0e0">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_1c9703be4d9771c110ac1d342d23d5062cc03354.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/8d8cdd8b4ad82c16795e92f9c6537b6713b048cd/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_7ac5886b63f12ed760bad8eecf73793458ddc3d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/b60d06ffd739d96246e667f9598ff69d914cf572/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_68265e57e6277eb4e776771878f50e5a1fac626e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/08ab949b6cd6cda3cb0e3aab325e18fe806096c4/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="75575883f0348fc5d2be85f23bd10b050095cf17">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_f39e1e6d5d778f9d03661624f4caddeb2a076dca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/80706aabed0f7ae476ec8bf8a319a70b5cee6a71/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_f5cd57250b3be1ee72ad1baa66074ab302def3c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/cd60aa8228ce75f1d992a5bf28d6276fefa6be29/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1df6d719c4e264d66bb98baa5cb637495b8cca66">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_b17d4861bd2cceae1eec2db71ba7af305ce39988.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/62f7b871783c64eea7e1b6143be4bbe453b658f9/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="444f9de23145e8caba7bf1c1772acad142ea6013">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_80bc8e70514a553ed0ac43f5395a669fa0394c73.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/13daea48416de836292b82ead9b2386f94d7a6b2/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fd2e9eadc9d214966ee7f60d6c5a17a335d7533">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_0edb0400ccc7f51525915bceb1d9bab9b427fbbf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/25d2ae3f543be17bd9c03ba2ca4d799ec48babfe/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_8cfdd6e13112f3c93283b8defcc93f866f308c12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/118a17e0c0e44c972a35770446e8cd02c55211a8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a61e7010aa7be5da53cd1bc5279630510c9a4912">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_be151b04bb45f68e839a24b4501bafddc860304c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/b03073643aa2f699da2716a95540cd15ce5f26cc/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_5995e269d7a36a66d998c253e84cfe3e362e265c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/5571ad1b2bd117343957367d09ff24d1e241d045/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_2a0043e3dea7cd49349af02d09a32cbc2f83f20c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/fb4ad7551d1f275078793bac3cead0f39c714823/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_59ef4bdde3286eb0b25c5c5d5877701f4cfe7e32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/aff73e7c34d9efa3bbe5be90bfb51fdb104692b7/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d6951cb416ebf8c66a32b9480808ca247b68344">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_e7442c0845bb13af06e899580f16f36f3cfba52d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/c45988f870a78e0c956b849eb98cf974354935a4/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ab0c7fe28f9506302eb39adf1ebf5858732e18ec">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_472892b1d2abba8315be6e585db8efd6a2d17dce.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/17343902207c757036d9d40f8b7d693456124140/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6da05b7498da036b5b37c3beb861cd2060929dcd">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_7be4c5984e92ef57bc9326790a7acbe7fdb0e4fc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/40291a7aa24fb5d81dd517abddaf96e59608ae02/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aa23e4589287adb431ef59d6c78af79ab8885682">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_ca04a136f1b4c142de8d4c8806720bc4e46f5ddf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/c2353348720a5f3ceee1743532306a30d348d2c2/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a9493f008850469ed3fab9b28658919562882aed">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_aeb9389283ab78780346c042f70c53c67c729ac4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/lukasboehler/.android/build-cache/80b9d7da035f0d24a7cb4cb05b0e30053851dbba/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca82d5800780b1d53f0f9ab43678d8634a34cddc">
+        <dex dex="/Users/lukasboehler/Developer/TeamXAndroid/app/build/intermediates/pre-dexed/release/classes_ac3005baeea5bce555136928eac2fefa2bbc55bf.jar" />
     </item>
 
 </items>
