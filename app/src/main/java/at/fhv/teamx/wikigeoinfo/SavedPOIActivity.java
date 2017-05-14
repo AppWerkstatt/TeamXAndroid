@@ -30,27 +30,27 @@ public class SavedPOIActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setTitle(getString(R.string.savedpois));
 
-        ListView flytoListview = (ListView)findViewById(R.id.flytoListview);
+        ListView savedPOIList = (ListView)findViewById(R.id.savedPOIList);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("saved/" + user.getUid());
-            mAdapter = new FirebaseListAdapter<FirPOI>(this, FirPOI.class, R.layout.firpoi_item, ref) {
-                @Override
-                protected void populateView(View view, final FirPOI firpoi, int position) {
-                    ((TextView)view.findViewById(R.id.label)).setText(firpoi.getTitle());
-
-                    view.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent = new Intent(SavedPOIActivity.this, ArticleViewerActivity.class);
-                            intent.putExtra("firpoi", firpoi);
-                            startActivity(intent);
-                        }
-                    });
-                }
-            };
-            flytoListview.setAdapter(mAdapter);
         }
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("saved");
+        mAdapter = new FirebaseListAdapter<FirPOI>(this, FirPOI.class, R.layout.firpoi_item, ref) {
+            @Override
+            protected void populateView(View view, final FirPOI firpoi, int position) {
+                ((TextView)view.findViewById(R.id.label)).setText(firpoi.getTitle());
+
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(SavedPOIActivity.this, ArticleViewerActivity.class);
+                        intent.putExtra("firpoi", firpoi);
+                        startActivity(intent);
+                    }
+                });
+            }
+        };
+        savedPOIList.setAdapter(mAdapter);
     }
 
 }

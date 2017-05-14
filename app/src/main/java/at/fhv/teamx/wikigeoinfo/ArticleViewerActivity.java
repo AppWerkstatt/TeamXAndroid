@@ -53,27 +53,27 @@ public class ArticleViewerActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.favorite) {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             if (user != null) {
-                DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("saved/" + user.getUid());
-                ref.child(mFirPoi.getArticleId()).runTransaction(new Transaction.Handler() {
-                    @Override
-                    public Transaction.Result doTransaction(MutableData mutableData) {
-                        FirPOI currentValue = mutableData.getValue(FirPOI.class);
-                        if (currentValue == null) {
-                            mutableData.setValue(mFirPoi);
-                            Snackbar.make(getWindow().getDecorView().getRootView(), getResources().getString(R.string.addedfavs), Snackbar.LENGTH_LONG).show();
-                        } else {
-                            mutableData.setValue(null);
-                            Snackbar.make(getWindow().getDecorView().getRootView(), getResources().getString(R.string.removedfavs), Snackbar.LENGTH_LONG).show();
-                        }
-                        return Transaction.success(mutableData);
-                    }
-
-                    @Override
-                    public void onComplete(DatabaseError databaseError, boolean b, DataSnapshot dataSnapshot) {
-
-                    }
-                });
             }
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("saved");
+            ref.child(mFirPoi.getArticleId()).runTransaction(new Transaction.Handler() {
+                @Override
+                public Transaction.Result doTransaction(MutableData mutableData) {
+                    FirPOI currentValue = mutableData.getValue(FirPOI.class);
+                    if (currentValue == null) {
+                        mutableData.setValue(mFirPoi);
+                        Snackbar.make(getWindow().getDecorView().getRootView(), getResources().getString(R.string.addedfavs), Snackbar.LENGTH_LONG).show();
+                    } else {
+                        mutableData.setValue(null);
+                        Snackbar.make(getWindow().getDecorView().getRootView(), getResources().getString(R.string.removedfavs), Snackbar.LENGTH_LONG).show();
+                    }
+                    return Transaction.success(mutableData);
+                }
+
+                @Override
+                public void onComplete(DatabaseError databaseError, boolean b, DataSnapshot dataSnapshot) {
+
+                }
+            });
         }
         return super.onOptionsItemSelected(item);
     }
