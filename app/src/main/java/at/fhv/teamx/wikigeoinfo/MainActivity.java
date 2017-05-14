@@ -1,15 +1,22 @@
 package at.fhv.teamx.wikigeoinfo;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -28,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private GoogleMap mMap;
     private LocationManager mLocationManager;
+    private static final int PERMISSION_ACCESS_COURSE_LOCATION = 527;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,18 +49,43 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show(); */
+        startLocationUpdates();
+    }
+
+    private void startLocationUpdates() {
         mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 10, this);
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION ) != PackageManager.PERMISSION_GRANTED ) {
+            ActivityCompat.requestPermissions(this, new String[] {  android.Manifest.permission.ACCESS_COARSE_LOCATION }, PERMISSION_ACCESS_COURSE_LOCATION );
+        } else {
+            mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 10, this);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSION_ACCESS_COURSE_LOCATION: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    startLocationUpdates();
+                } else {
+                    Snackbar.make(getWindow().getDecorView().getRootView(), getResources().getString(R.string.gpsoffsnack), Snackbar.LENGTH_LONG)
+                            .setAction(getResources().getString(R.string.settingsgps), new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                                    startActivity(intent);
+                                }
+                            }).show();
+                }
+                return;
+            }
+        }
     }
 
     @Override
     public void onLocationChanged(Location location) {
-
-        String msg = "New Latitude: " + location.getLatitude()
-                + "New Longitude: " + location.getLongitude();
-
+        LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, (float)10.0));
     }
 
     @Override
@@ -74,7 +107,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
-        // TODO Auto-generated method stub
 
     }
 
@@ -111,9 +143,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Start city is our current location.
-        LatLng dornbirn = new LatLng(47.413070, 9.744314);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(dornbirn, (float)10.0));
         mMap.setOnMarkerClickListener(this);
         mMap.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
             @Override

@@ -42,6 +42,7 @@ public class WikiAPIProvider {
                                 poiType = "landmark";
                             }
                             poi.type = poiType;
+                            poiArrayList.add(poi);
                         }
                         completionHandler.handle(poiArrayList);
                     } catch (JSONException e) {
