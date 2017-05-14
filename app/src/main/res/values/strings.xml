@@ -5,4 +5,8 @@
     <string name="gpsison">Finding your location</string>
     <string name="settingsgps">Settings</string>
     <string name="checkinternetconnection">Please check your internet connection.</string>
+    <string name="invite_people">Invite people</string>
+    <string name="invitation_title">Wikify Invitation</string>
+    <string name="invitation_message">Go and check out Wikify. The brand new app to explore Wikipedia.</string>
+    <string name="invitation_cta">Invite</string>
 </resources>

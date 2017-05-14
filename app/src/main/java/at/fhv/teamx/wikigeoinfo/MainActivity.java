@@ -9,7 +9,9 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -18,9 +20,13 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.gms.appinvite.AppInvite;
+import com.google.android.gms.appinvite.AppInviteInvitation;
 import com.google.android.gms.appinvite.AppInviteInvitationResult;
 import com.google.android.gms.appinvite.AppInviteReferral;
 import com.google.android.gms.common.ConnectionResult;
@@ -37,15 +43,22 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.thefinestartist.finestwebview.FinestWebView;
 
+import org.json.JSONArray;
+
+import java.io.Serializable;
 import java.util.ArrayList;
+
+import static com.google.android.gms.appinvite.AppInviteInvitation.*;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, LocationListener, GoogleApiClient.OnConnectionFailedListener {
     private FirebaseAnalytics mFirebaseAnalytics;
     private GoogleMap mMap;
     private LocationManager mLocationManager;
     private static final int PERMISSION_ACCESS_COURSE_LOCATION = 527;
+    private static final int REQUEST_INVITE = 427;
     private boolean followUserLocation = true;
     private GoogleApiClient mGoogleApiClient;
+    private ArrayList<POI> mPois;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +76,25 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         setupDeepLinking();
         startLocationUpdates();
+
+        if (savedInstanceState != null) {
+            Serializable lastPOIArray = savedInstanceState.getSerializable("poiarray");
+            if (lastPOIArray != null && lastPOIArray instanceof ArrayList) {
+                mPois = (ArrayList)lastPOIArray;
+            }
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putSerializable("poiarray", mPois);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        outState.putSerializable("poiarray", mPois);
+        super.onSaveInstanceState(outState, outPersistentState);
     }
 
     private void setupDeepLinking() {
@@ -158,22 +190,30 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         WikiAPIProvider.loadPOIS(mMap.getCameraPosition().target.latitude, mMap.getCameraPosition().target.longitude, new WikiAPIProvider.WikiAPICompletionHandler() {
             @Override
             public void handle(ArrayList<POI> pois) {
-                mMap.clear();
-                for (int i = 0; i < pois.size(); i++) {
-                    POI currentPOI = pois.get(i);
-                    Marker marker = mMap.addMarker(new MarkerOptions()
-                            .position(new LatLng(currentPOI.latitude, currentPOI.longitude))
-                            .title(currentPOI.title));
-                    int source = getResources().getIdentifier(currentPOI.type + "_pin", "drawable", getPackageName());
-                    if (source != 0) {
-                        marker.setIcon(BitmapDescriptorFactory.fromResource(source));
-                    } else {
-                        marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.city_pin));
-                    }
-                    marker.setTag(currentPOI.pageId);
-                }
+                mPois = pois;
+                updatePOIS();
             }
         });
+    }
+
+    private void updatePOIS() {
+        mMap.clear();
+        if (mPois == null) {
+            return;
+        }
+        for (int i = 0; i < mPois.size(); i++) {
+            POI currentPOI = mPois.get(i);
+            Marker marker = mMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(currentPOI.latitude, currentPOI.longitude))
+                    .title(currentPOI.title));
+            int source = getResources().getIdentifier(currentPOI.type + "_pin", "drawable", getPackageName());
+            if (source != 0) {
+                marker.setIcon(BitmapDescriptorFactory.fromResource(source));
+            } else {
+                marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.city_pin));
+            }
+            marker.setTag(currentPOI.pageId);
+        }
     }
 
     @Override
@@ -224,11 +264,32 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 oldZoom = mMap.getCameraPosition().zoom;
             }
         });
+        // If we restored some.
+        updatePOIS();
+        // Reload anyways :)
         loadNearbyWikidata();
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Snackbar.make(getWindow().getDecorView().getRootView(), getResources().getString(R.string.checkinternetconnection), Snackbar.LENGTH_LONG).show();
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.invite) {
+            IntentBuilder intentBuilder = new IntentBuilder(getString(R.string.invitation_title));
+            intentBuilder.setMessage(getString(R.string.invitation_message));
+            intentBuilder.setCallToActionText(getString(R.string.invitation_cta));
+            Intent intent = intentBuilder.build();
+            startActivityForResult(intent, REQUEST_INVITE);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
