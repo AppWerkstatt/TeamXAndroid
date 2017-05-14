@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "961724891596",
+    "firebase_url": "https://wikify-429ca.firebaseio.com",
+    "project_id": "wikify-429ca",
+    "storage_bucket": "wikify-429ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961724891596:android:471166a36c6969d3",
+        "android_client_info": {
+          "package_name": "at.fhv.teamx.wikigeoinfo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961724891596-e5tjafdhh051ej0bobue6vh2p4mefuhp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "at.fhv.teamx.wikigeoinfo",
+            "certificate_hash": "c0b9b417f2080fc4f32d5475a911d05581d51b18"
+          }
+        },
+        {
+          "client_id": "961724891596-u82f6rfkff2icm3l7t7r6inidja4v61d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBa-xIn7IBg0XTvWGkW-R_znanrsJu8i8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961724891596-u82f6rfkff2icm3l7t7r6inidja4v61d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
