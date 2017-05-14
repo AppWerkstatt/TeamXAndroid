@@ -13,4 +13,7 @@
     <string name="settings">Settings</string>
     <string name="savedpois">Saved POI</string>
     <string name="favorite">Favorites</string>
+    <string name="shareto">Share article to...</string>
+    <string name="addedfavs">Article has been added to your favourites.</string>
+    <string name="removedfavs">Article has been removed from your favourites.</string>
 </resources>

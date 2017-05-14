@@ -62,7 +62,8 @@
         <activity
             android:name=".SavedPOIActivity"
             android:label="@string/title_activity_saved_poi"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ArticleViewerActivity"></activity>
     </application>
 
 </manifest>

@@ -249,7 +249,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
 
             // Open the activity
-            new FinestWebView.Builder(MainActivity.this).show("https://en.m.wikipedia.org/w/index.php?title=Translation&curid=" + tag);
+            //new FinestWebView.Builder(MainActivity.this).show("https://en.m.wikipedia.org/w/index.php?title=Translation&curid=" + tag);
+
+            FirPOI firPOI = new FirPOI();
+            firPOI.setArticleId(tag + "");
+            firPOI.setTitle(marker.getTitle());
+            Intent intent = new Intent(this, ArticleViewerActivity.class);
+            intent.putExtra("firpoi", firPOI);
+            startActivity(intent);
         }
         return true;
     }

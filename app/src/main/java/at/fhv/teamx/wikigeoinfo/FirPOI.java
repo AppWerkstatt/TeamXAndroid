@@ -1,10 +1,12 @@
 package at.fhv.teamx.wikigeoinfo;
 
+import java.io.Serializable;
+
 /**
  * Created by lukasboehler on 14.05.17.
  */
 
-public class FirPOI {
+public class FirPOI implements Serializable {
     private String articleId;
     private String title;
 

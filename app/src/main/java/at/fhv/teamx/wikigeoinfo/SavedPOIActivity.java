@@ -42,7 +42,9 @@ public class SavedPOIActivity extends AppCompatActivity {
                     view.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-
+                            Intent intent = new Intent(SavedPOIActivity.this, ArticleViewerActivity.class);
+                            intent.putExtra("firpoi", firpoi);
+                            startActivity(intent);
                         }
                     });
                 }
