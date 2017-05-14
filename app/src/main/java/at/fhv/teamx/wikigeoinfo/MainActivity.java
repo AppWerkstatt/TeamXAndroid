@@ -11,6 +11,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -19,6 +20,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
+import com.google.android.gms.appinvite.AppInvite;
+import com.google.android.gms.appinvite.AppInviteInvitationResult;
+import com.google.android.gms.appinvite.AppInviteReferral;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -27,16 +34,18 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.thefinestartist.finestwebview.FinestWebView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, LocationListener {
-
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, LocationListener, GoogleApiClient.OnConnectionFailedListener {
+    private FirebaseAnalytics mFirebaseAnalytics;
     private GoogleMap mMap;
     private LocationManager mLocationManager;
     private static final int PERMISSION_ACCESS_COURSE_LOCATION = 527;
     private boolean followUserLocation = true;
+    private GoogleApiClient mGoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +59,38 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
+        setupDeepLinking();
         startLocationUpdates();
+    }
+
+    private void setupDeepLinking() {
+        // Build GoogleApiClient with AppInvite API for receiving deep links
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this, this)
+                .addApi(AppInvite.API)
+                .build();
+
+        // Check if this app was launched from a deep link. Setting autoLaunchDeepLink to true
+        // would automatically launch the deep link if one is found.
+        boolean autoLaunchDeepLink = false;
+        AppInvite.AppInviteApi.getInvitation(mGoogleApiClient, this, autoLaunchDeepLink)
+                .setResultCallback(
+                        new ResultCallback<AppInviteInvitationResult>() {
+                            @Override
+                            public void onResult(@NonNull AppInviteInvitationResult result) {
+                                if (result.getStatus().isSuccess()) {
+                                    // Extract deep link from Intent
+                                    Intent intent = result.getInvitationIntent();
+                                    String deepLink = AppInviteReferral.getDeepLink(intent);
+
+                                    Log.d("Wikify", deepLink);
+                                } else {
+                                    Log.d("Wikify", "getInvitation: no deep link found.");
+                                }
+                            }
+                        });
     }
 
     private void startLocationUpdates() {
@@ -140,6 +180,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public boolean onMarkerClick(Marker marker) {
         int tag = (int)marker.getTag();
         if (tag > 0) {
+            // Track the article
+            Bundle bundle = new Bundle();
+            bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "article_" + tag);
+            bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, marker.getTitle());
+            bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "article");
+            mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+
+            // Open the activity
             new FinestWebView.Builder(MainActivity.this).show("https://en.m.wikipedia.org/w/index.php?title=Translation&curid=" + tag);
         }
         return true;
@@ -177,5 +225,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
         loadNearbyWikidata();
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        Snackbar.make(getWindow().getDecorView().getRootView(), getResources().getString(R.string.checkinternetconnection), Snackbar.LENGTH_LONG).show();
     }
 }
