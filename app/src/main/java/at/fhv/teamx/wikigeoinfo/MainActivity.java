@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     private LocationManager mLocationManager;
     private static final int PERMISSION_ACCESS_COURSE_LOCATION = 527;
+    private boolean followUserLocation = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +85,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onLocationChanged(Location location) {
-        LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, (float)10.0));
+        if (followUserLocation) {
+            LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, (float)10.0));
+            followUserLocation = false;
+        }
     }
 
     @Override
@@ -120,7 +124,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     Marker marker = mMap.addMarker(new MarkerOptions()
                             .position(new LatLng(currentPOI.latitude, currentPOI.longitude))
                             .title(currentPOI.title));
-                    marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.city_pin));
+                    int source = getResources().getIdentifier(currentPOI.type + "_pin", "drawable", getPackageName());
+                    if (source != 0) {
+                        marker.setIcon(BitmapDescriptorFactory.fromResource(source));
+                    } else {
+                        marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.city_pin));
+                    }
                     marker.setTag(currentPOI.pageId);
                 }
             }
