@@ -26,6 +26,7 @@ public class FlyToActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fly_to);
+        setTitle(getString(R.string.flytotitle));
 
         ListView flytoListview = (ListView)findViewById(R.id.flytoListview);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("flytopois");
