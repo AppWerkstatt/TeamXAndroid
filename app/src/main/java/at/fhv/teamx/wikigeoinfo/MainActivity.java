@@ -40,7 +40,12 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.thefinestartist.finestwebview.FinestWebView;
 
 import org.json.JSONArray;
@@ -60,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private boolean followUserLocation = true;
     private GoogleApiClient mGoogleApiClient;
     private ArrayList<POI> mPois;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,9 +80,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        mAuth = FirebaseAuth.getInstance();
 
         setupDeepLinking();
         startLocationUpdates();
+        authAnonymous();
 
         if (savedInstanceState != null) {
             Serializable lastPOIArray = savedInstanceState.getSerializable("poiarray");
@@ -84,6 +92,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 mPois = (ArrayList)lastPOIArray;
             }
         }
+    }
+
+    private void authAnonymous() {
+        mAuth.signInAnonymously()
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
+                        }
+                    }
+                });
     }
 
     @Override
