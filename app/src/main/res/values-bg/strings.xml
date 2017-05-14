@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WikiGeoInfo</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="gpsoffsnack">GPS is turned off</string>
+    <string name="gpsison">Finding your location</string>
+    <string name="settingsgps">Settings</string>
+</resources>
