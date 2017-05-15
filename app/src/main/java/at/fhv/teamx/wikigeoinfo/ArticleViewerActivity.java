@@ -46,6 +46,7 @@ public class ArticleViewerActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.invite) {
             Intent share = new Intent(android.content.Intent.ACTION_SEND);
+            share.setType("text/plain");
             share.putExtra(Intent.EXTRA_SUBJECT, mFirPoi.getTitle());
             share.putExtra(Intent.EXTRA_TEXT, DynamicLinksHelper.createDynamicLink(Integer.parseInt(mFirPoi.getArticleId())));
             startActivity(Intent.createChooser(share, getString(R.string.shareto)));
