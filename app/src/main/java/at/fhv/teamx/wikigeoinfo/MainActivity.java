@@ -339,7 +339,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         if (requestCode == AWESOME_CALLBACK) {
             // Flyto location.
-            if (data.getSerializableExtra("flyto") != null) {
+            if (data != null && data.getSerializableExtra("flyto") != null) {
                 FlyTo flyto = (FlyTo)data.getSerializableExtra("flyto");
                 LatLng userLocation = new LatLng(flyto.getLat(), flyto.getLng());
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, (float)16.0));

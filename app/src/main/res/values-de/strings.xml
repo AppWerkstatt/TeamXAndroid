@@ -1,19 +1,21 @@
 <resources>
     <string name="app_name">Wikify</string>
     <string name="title_activity_main">Wikify</string>
-    <string name="gpsoffsnack">GPS is turned off</string>
-    <string name="gpsison">Finding your location</string>
-    <string name="settingsgps">Settings</string>
-    <string name="checkinternetconnection">Please check your internet connection.</string>
-    <string name="invite_people">Invite people</string>
-    <string name="invitation_title">Wikify Invitation</string>
-    <string name="invitation_message">Go and check out Wikify. The brand new app to explore Wikipedia.</string>
-    <string name="invitation_cta">Invite</string>
-    <string name="flytotitle">Choose a destination</string>
-    <string name="settings">Settings</string>
-    <string name="savedpois">Saved POI</string>
-    <string name="favorite">Favorites</string>
-    <string name="shareto">Share article to...</string>
-    <string name="addedfavs">Article has been added to your favourites.</string>
-    <string name="removedfavs">Article has been removed from your favourites.</string>
+    <string name="gpsoffsnack">GPS ist ausgeschaltet</string>
+    <string name="gpsison">Standort wird gesucht...</string>
+    <string name="settingsgps">Einstellungen</string>
+    <string name="checkinternetconnection">Bitte prüfen Sie Ihre Internetverbindung.</string>
+    <string name="invite_people">Personen Einladen</string>
+    <string name="invitation_title">Wikify Einladung</string>
+    <string name="invitation_message">Go and check out Wikify. Die neue App um Wikipedia zu erkunden.</string>
+    <string name="invitation_cta">Einladen</string>
+    <string name="flytotitle">Reiseziel wählen...</string>
+    <string name="title_activity_settings">Einstellungen</string>
+    <string name="settings">Einstellungen</string>
+    <string name="title_activity_saved_poi">Gespeicherte POI</string>
+    <string name="savedpois">Gepseicherte POI</string>
+    <string name="favorite">Favouriten</string>
+    <string name="shareto">Artikel Teilen...</string>
+    <string name="addedfavs">Artikel wurde in den Favouriten gespeichert.</string>
+    <string name="removedfavs">Artikel wurde aus den Favouriten gelöscht.</string>
 </resources>
