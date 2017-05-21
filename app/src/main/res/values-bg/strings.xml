@@ -16,4 +16,6 @@
     <string name="shareto">Споделете статия...</string>
     <string name="addedfavs">Статията е добавен към любимите ви.</string>
     <string name="removedfavs">Статията е премахната от любимите ви.</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_saved_poi">Saved POI</string>
 </resources>
